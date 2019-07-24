@@ -1,0 +1,46 @@
+import random
+from pygame import mixer
+
+def check_txt():
+    # verificando arquivo txt
+    txt = open('palavras.txt', 'r', encoding='utf8')
+    palavras = []
+    for line in txt:
+        palavras.append(str(line.strip()))
+    txt.close()
+    return palavras[random.randint(0, len(palavras))]
+
+def clear_terminal():
+    return '\n'*1000
+
+def play_sound():
+    file = 'beep-07.mp3'
+    mixer.init()
+    mixer.music.load(file)
+    mixer.music.play()
+
+def check_word_letters(palavra):
+    lista_letra_correta = []
+    for letra in palavra:
+        if letra not in lista_letra_correta:
+            lista_letra_correta.append(letra)
+    return len(lista_letra_correta)
+
+def check_current_result(palpites, palavra):
+    palavra_formada = ''
+    for x in range(len(palavra)):
+        for letras in palpites:
+            if letras in palavra:
+                palavra_formada += ' ' + letras + ' '
+        palavra_formada += ' _ '
+    print(palavra_formada)
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
