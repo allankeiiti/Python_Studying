@@ -64,10 +64,12 @@ class boneco:
         self.erros = erros
         self.acertos = acertos
         self.alvo_acertos = check_word_letters(self.palavra)
+        self.lista_acertos = []
 
     def guess(self, letra):
         self.letra = letra
         if letra in self.palavra:
+            self.lista_acertos.append(letra)
             print(bcolors.OKGREEN + '{} pertence à palavra escondida!'.format(letra) + bcolors.ENDC)
             self.acertos += 1
             if self.acertos == self.alvo_acertos:
@@ -90,9 +92,9 @@ class boneco:
         print(bcolors.OKGREEN + '' + board[erros] + '' + bcolors.ENDC)
         print(bcolors.OKGREEN + 'Palavra sorteada: {}'.format(self.palavra) + bcolors.ENDC)
 
-    def status_boneco(self, palpites):
+    def status_boneco(self):
         print(board[self.erros])
-        check_current_result(palpites, self.palavra)
+        check_current_result(self.lista_acertos, self.palavra)
 
 
     def main(self):
@@ -104,7 +106,7 @@ class boneco:
         while self.x == 1:
             play_sound()
             clear_terminal()
-            self.status_boneco(palpites)
+            self.status_boneco()
             print('Palpites: {}'.format(palpites))
             letra = input('Digite APENAS uma Letra: ').lower()
             if len(letra) == 1:

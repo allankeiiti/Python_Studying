@@ -27,12 +27,13 @@ def check_word_letters(palavra):
     return len(lista_letra_correta)
 
 def check_current_result(palpites, palavra):
-    palavra_formada = ''
+    palavra_formada = []
     for x in range(len(palavra)):
+        palavra_formada.append('_')
+    for x in range(len(palavra_formada)):
         for letras in palpites:
-            if letras in palavra:
-                palavra_formada += ' ' + letras + ' '
-        palavra_formada += ' _ '
+            if letras == palavra[x]:
+                palavra_formada[x] = letras
     print(palavra_formada)
 
 class bcolors:
