@@ -120,5 +120,5 @@ class boneco:
                 print('Digite uma letra apenas.')
 
 boneco1 = boneco()
-print(boneco1.palavra)
+# print(boneco1.palavra)
 boneco1.main()

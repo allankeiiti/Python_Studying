@@ -2,7 +2,7 @@ import random
 from pygame import mixer
 
 def check_txt():
-    # verificando arquivo txt
+    # verificando arquivo txt que contém as palavras para o game
     txt = open('palavras.txt', 'r', encoding='utf8')
     palavras = []
     for line in txt:
@@ -33,7 +33,7 @@ def check_current_result(palpites, palavra):
     for x in range(len(palavra_formada)):
         for letras in palpites:
             if letras == palavra[x]:
-                palavra_formada[x] = letras
+                palavra_formada[x] = letras.upper()
     print(palavra_formada)
 
 class bcolors:
