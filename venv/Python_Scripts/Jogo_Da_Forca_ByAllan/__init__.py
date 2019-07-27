@@ -15,6 +15,12 @@ def check_txt(mode):
     if mode.lower() == 'list':
         return palavras
 
+def select_db():
+    conn = sqlite3.connect('palavras.db')
+
+    return palavra
+
+
 def play_sound():
     file = 'beep-07.mp3'
     mixer.init()

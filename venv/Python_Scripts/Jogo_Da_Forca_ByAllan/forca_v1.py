@@ -3,6 +3,7 @@
 # Jogo da Froca
 # Programação Orientada a Objetos
 from string import ascii_lowercase
+from os import system
 from __init__ import check_txt, play_sound, bcolors, check_word_letters, check_current_result
 
 # Board (tabuleiro)
@@ -105,7 +106,7 @@ class boneco:
         while self.x == 1:
             play_sound()
             self.status_boneco()
-            print('Palpites: {}'.format(palpites))
+            print('Palpites: {}'.format(palpites).upper())
             letra = input('Digite APENAS uma Letra: ').lower()
             if len(letra) == 1:
                 if letra in letras:
@@ -117,6 +118,7 @@ class boneco:
             else:
                 print('Digite uma letra apenas.')
 
+print ('JOGO DA FORCA')
+system('pause')
 boneco1 = boneco()
-# print(boneco1.palavra)
 boneco1.main()
