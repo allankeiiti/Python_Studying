@@ -1,17 +1,19 @@
-import random
+from random import randint
 from pygame import mixer
+import sqlite3
+import re
 
-def check_txt():
+def check_txt(mode):
     # verificando arquivo txt que contém as palavras para o game
     txt = open('palavras.txt', 'r', encoding='utf8')
     palavras = []
     for line in txt:
         palavras.append(str(line.strip()))
     txt.close()
-    return palavras[random.randint(0, len(palavras))]
-
-def clear_terminal():
-    return '\n'*1000
+    if mode.lower() == 'random':
+        return palavras[randint(0, len(palavras))]
+    if mode.lower() == 'list':
+        return palavras
 
 def play_sound():
     file = 'beep-07.mp3'

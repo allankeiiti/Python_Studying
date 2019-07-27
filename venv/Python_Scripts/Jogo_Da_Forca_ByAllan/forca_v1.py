@@ -2,9 +2,8 @@
 
 # Jogo da Froca
 # Programação Orientada a Objetos
-import random
 from string import ascii_lowercase
-from __init__ import check_txt, clear_terminal, play_sound, bcolors, check_word_letters, check_current_result
+from __init__ import check_txt, play_sound, bcolors, check_word_letters, check_current_result
 
 # Board (tabuleiro)
 board = ['''
@@ -52,14 +51,14 @@ O   |
 =========''', '''
  +---+
  |   |
- O   |
+ O   |      TRY AGAIN
 /|\  |
 / \  |
      |
 =========''']
 
 class boneco:
-    def __init__(self, palavra = check_txt(), erros = 0, acertos = 0):
+    def __init__(self, palavra = check_txt('random'), erros = 0, acertos = 0):
         self.palavra = palavra
         self.erros = erros
         self.acertos = acertos
@@ -105,7 +104,6 @@ class boneco:
         self.x = 1
         while self.x == 1:
             play_sound()
-            clear_terminal()
             self.status_boneco()
             print('Palpites: {}'.format(palpites))
             letra = input('Digite APENAS uma Letra: ').lower()
