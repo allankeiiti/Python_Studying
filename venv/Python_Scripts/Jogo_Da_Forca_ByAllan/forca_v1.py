@@ -5,6 +5,7 @@
 from string import ascii_lowercase
 from os import system
 from __init__ import check_txt, play_sound, bcolors, check_word_letters, check_current_result
+import CRUD_SQLite as crud
 
 # Board (tabuleiro)
 board = ['''
@@ -59,7 +60,7 @@ O   |
 =========''']
 
 class boneco:
-    def __init__(self, palavra = check_txt('random'), erros = 0, acertos = 0):
+    def __init__(self, palavra = crud.random_word(), erros = 0, acertos = 0):
         self.palavra = palavra
         self.erros = erros
         self.acertos = acertos
