@@ -12,7 +12,7 @@
 # Input: "John Doe" Output: False
 # Input: "$ololearn7" Output: True
 
-from __init__ import validate_lowerAndUpperCase, validate_length, validate_numbers, validate_space
+from __init__ import validate_lowerAndUpperCase, validate_length, validate_numbers, validate_space, validate_special_chars
 
 class user:
     def __init__(self, login, password, error_message = ''):
@@ -22,4 +22,9 @@ class user:
 
 
 user1 = user('allan.nakakita','senhA')
+validate_length(user1.password)
+validate_lowerAndUpperCase(user1.password)
+validate_special_chars(user1.password)
+validate_space(user1.password)
 print(user1.login)
+print(user1.error_message)
