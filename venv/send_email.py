@@ -28,5 +28,13 @@ def add():
   server.sendmail(from_addr, to_addrs, message.as_string())
   server.quit()
 
+    html = f"""\
+    <html>
+      <head></head>
+      <body>
+        <p style="color: red;">{corpo}</p>
+      </body>
+    </html>
+    """
 
 add()
