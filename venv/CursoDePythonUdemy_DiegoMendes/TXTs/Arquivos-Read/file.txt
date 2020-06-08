@@ -1,7 +1,0 @@
-Xbox360
-Advanced
-IntelCPU
-GPU
-NFS
-NTFS
-NIS

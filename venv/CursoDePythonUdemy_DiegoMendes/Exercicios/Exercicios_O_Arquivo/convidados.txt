@@ -1,5 +1,0 @@
-       1,                                   Allan,SP                            ,SP
-       2,                                  Fulano,RJ                            ,RJ
-       3,                                   Bruno,MG                            ,MG
-       4,                                   Snake,MT                            ,MT
-       5,                                  Kleber,TO                            ,TO
