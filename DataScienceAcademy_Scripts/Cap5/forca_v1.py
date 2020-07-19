@@ -4,8 +4,9 @@
 # Programação Orientada a Objetos
 from string import ascii_lowercase
 from os import system
-from __init__ import check_txt, play_sound, bcolors, check_word_letters, check_current_result
-import CRUD_SQLite as crud
+from DataScienceAcademy_Scripts.Cap5 import CRUD_SQLite as crud
+from DataScienceAcademy_Scripts.Cap5.start import check_txt, play_sound, bcolors, \
+    check_word_letters, check_current_result
 
 # Board (tabuleiro)
 board = ['''

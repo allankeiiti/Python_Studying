@@ -1,11 +1,11 @@
 from random import randint
 from pygame import mixer
 import sqlite3
-import re
+
 
 def check_txt(mode):
     # verificando arquivo txt que contém as palavras para o game
-    txt = open('palavras.txt', 'r', encoding='utf8')
+    txt = open('palavras.txt', encoding='utf8')
     palavras = []
     for line in txt:
         palavras.append(str(line.strip()))
@@ -15,11 +15,6 @@ def check_txt(mode):
     if mode.lower() == 'list':
         return palavras
 
-def select_db():
-    conn = sqlite3.connect('palavras.db')
-
-    return palavra
-
 
 def play_sound():
     file = 'beep-07.mp3'
@@ -27,12 +22,14 @@ def play_sound():
     mixer.music.load(file)
     mixer.music.play()
 
+
 def check_word_letters(palavra):
     lista_letra_correta = []
     for letra in palavra:
         if letra not in lista_letra_correta:
             lista_letra_correta.append(letra)
     return len(lista_letra_correta)
+
 
 def check_current_result(palpites, palavra):
     palavra_formada = []
@@ -43,6 +40,7 @@ def check_current_result(palpites, palavra):
             if letras == palavra[x]:
                 palavra_formada[x] = letras.upper()
     print(palavra_formada)
+
 
 class bcolors:
     HEADER = '\033[95m'
